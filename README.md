@@ -208,3 +208,7 @@ sudo systemctl restart goodbyedpi
 ## Lisans / License
 
 MIT License — Özgürce kullanabilir, değiştirebilir ve dağıtabilirsiniz.
+
+## Kali Linux: systemd ile otomatik başlatma
+
+Kali/Debian tabanlı sistemlerde systemd ile açılışta otomatik başlatma için [`KALI_AUTOSTART.md`](KALI_AUTOSTART.md) rehberini izleyin. Kurulum betiği `/etc/resolv.conf` dosyasını değiştirmez veya `chattr +i` kullanmaz. Dikkat: kurallar yalnız Discord'u değil, makineden çıkan TCP 80/443 trafiğini ve IPv4 UDP/53 DNS sorgularını etkiler.
