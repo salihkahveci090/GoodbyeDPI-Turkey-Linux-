@@ -1,0 +1,17 @@
+[Unit]
+Description=GoodbyeDPI Linux (Kali/Debian systemd setup)
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=root
+ExecStartPre=/usr/local/sbin/goodbyedpi-nft-kali.sh
+ExecStart=/usr/local/bin/goodbyedpi --fragment-size 5 --set-ttl 5 --queue-num 0
+ExecStopPost=-/usr/sbin/nft delete table inet goodbyedpi
+Restart=on-failure
+RestartSec=3
+TimeoutStopSec=5
+
+[Install]
+WantedBy=multi-user.target
